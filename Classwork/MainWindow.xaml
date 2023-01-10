@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="490" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
     <Grid>
+        <Grid Background="White">
+            <DatePicker Padding="5" Margin="60,44,420,330"/>
+            <ListBox x:Name="LBX" Margin="0,0,0,237">
+                <ListBoxItem Content="Встать" FontSize="36"/>
+                <ListBoxItem Content="Помыться" FontSize="36"/>
+                <ListBoxItem Content="Убрать" FontSize="36"/>
+                <ListBoxItem Content="GIUDFHUighfdg" FontSize="36" Selected="ListBoxItem_Selected"/>
+            </ListBox>
 
+            <Button x:Name="Ex" Content="Закрыть" Margin="500,259,120,85" FontSize="48" Click="Ex_Click"/>
+
+            <Button Content="Мааагия" Click="MagicNumerator" FontSize="40" Foreground="#FF7A1414" Background="#FFE6BFBF" BorderBrush="#FF922C2C" Margin="425,10,105,319"/>
+            <TextBox x:Name="dbglog1" Style="{DynamicResource MaterialDesignHeadline6TextBlock}" HorizontalAlignment="Left" Margin="10,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="265" Height="222"/>
+            <TextBlock x:Name="TB2" HorizontalAlignment="Left" Margin="340,314,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
+        </Grid>
     </Grid>
 </Window>

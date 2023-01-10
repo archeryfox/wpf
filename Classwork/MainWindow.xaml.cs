@@ -129,7 +129,9 @@ namespace WpfApp1
 
         }
 
+        private void ListBoxItem_Selected(object sender, RoutedEventArgs e)
+        {
 
-      
+        }
     }
 }
