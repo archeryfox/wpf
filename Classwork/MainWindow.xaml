@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="605" Width="840">
     <Grid>
-
+        <ComboBox x:Name="lid" Margin="210,224,210,280" FontSize="36">
+            <ComboBoxItem Content="yquiefha" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="yquiefha2" ></ComboBoxItem>
+            <ComboBoxItem Content="yquiefha3"></ComboBoxItem>
+            <ComboBoxItem Content="yquiefha4"></ComboBoxItem>
+        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="190,399,0,0" FontSize="40px" VerticalAlignment="Top" Height="70" Width="305" Click="Button_Click"/>
     </Grid>
 </Window>

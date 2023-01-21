@@ -24,5 +24,19 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string[] stringw = lid.Items.OfType<ComboBoxItem>().Select(x => x.Content.ToString()).ToArray();
+            foreach (var item in stringw)
+            {
+                MessageBox.Show(item);
+            }
+        }
     }
 }
