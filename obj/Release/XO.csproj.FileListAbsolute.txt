@@ -1,0 +1,16 @@
+D:\WORK\С# WPF\bin\Release\XO.exe.config
+D:\WORK\С# WPF\bin\Release\XO.exe
+D:\WORK\С# WPF\bin\Release\XO.pdb
+D:\WORK\С# WPF\obj\Release\XO.csproj.AssemblyReference.cache
+D:\WORK\С# WPF\obj\Release\XO.csproj.SuggestedBindingRedirects.cache
+D:\WORK\С# WPF\obj\Release\MainWindow.g.cs
+D:\WORK\С# WPF\obj\Release\App.g.cs
+D:\WORK\С# WPF\obj\Release\XO_MarkupCompile.cache
+D:\WORK\С# WPF\obj\Release\XO_MarkupCompile.lref
+D:\WORK\С# WPF\obj\Release\MainWindow.baml
+D:\WORK\С# WPF\obj\Release\XO.g.resources
+D:\WORK\С# WPF\obj\Release\XO.Properties.Resources.resources
+D:\WORK\С# WPF\obj\Release\XO.csproj.GenerateResource.cache
+D:\WORK\С# WPF\obj\Release\XO.csproj.CoreCompileInputs.cache
+D:\WORK\С# WPF\obj\Release\XO.exe
+D:\WORK\С# WPF\obj\Release\XO.pdb
