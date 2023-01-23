@@ -1,0 +1,32 @@
+D:\CshS\XO\bin\Debug\XO.exe.config
+D:\CshS\XO\bin\Debug\XO.exe
+D:\CshS\XO\bin\Debug\XO.pdb
+D:\CshS\XO\obj\Debug\XO.csproj.AssemblyReference.cache
+D:\CshS\XO\obj\Debug\XO.csproj.SuggestedBindingRedirects.cache
+D:\CshS\XO\obj\Debug\MainWindow.g.cs
+D:\CshS\XO\obj\Debug\App.g.cs
+D:\CshS\XO\obj\Debug\XO_MarkupCompile.cache
+D:\CshS\XO\obj\Debug\XO_MarkupCompile.lref
+D:\CshS\XO\obj\Debug\MainWindow.baml
+D:\CshS\XO\obj\Debug\XO.g.resources
+D:\CshS\XO\obj\Debug\XO.Properties.Resources.resources
+D:\CshS\XO\obj\Debug\XO.csproj.GenerateResource.cache
+D:\CshS\XO\obj\Debug\XO.csproj.CoreCompileInputs.cache
+D:\CshS\XO\obj\Debug\XO.exe
+D:\CshS\XO\obj\Debug\XO.pdb
+D:\WORK\С# WPF\bin\Debug\XO.exe.config
+D:\WORK\С# WPF\bin\Debug\XO.exe
+D:\WORK\С# WPF\bin\Debug\XO.pdb
+D:\WORK\С# WPF\obj\Debug\XO.csproj.AssemblyReference.cache
+D:\WORK\С# WPF\obj\Debug\XO.csproj.SuggestedBindingRedirects.cache
+D:\WORK\С# WPF\obj\Debug\MainWindow.g.cs
+D:\WORK\С# WPF\obj\Debug\App.g.cs
+D:\WORK\С# WPF\obj\Debug\XO_MarkupCompile.cache
+D:\WORK\С# WPF\obj\Debug\XO_MarkupCompile.lref
+D:\WORK\С# WPF\obj\Debug\MainWindow.baml
+D:\WORK\С# WPF\obj\Debug\XO.g.resources
+D:\WORK\С# WPF\obj\Debug\XO.Properties.Resources.resources
+D:\WORK\С# WPF\obj\Debug\XO.csproj.GenerateResource.cache
+D:\WORK\С# WPF\obj\Debug\XO.csproj.CoreCompileInputs.cache
+D:\WORK\С# WPF\obj\Debug\XO.exe
+D:\WORK\С# WPF\obj\Debug\XO.pdb
