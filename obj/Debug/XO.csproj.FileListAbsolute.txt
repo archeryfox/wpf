@@ -30,3 +30,5 @@ D:\WORK\С# WPF\obj\Debug\XO.csproj.GenerateResource.cache
 D:\WORK\С# WPF\obj\Debug\XO.csproj.CoreCompileInputs.cache
 D:\WORK\С# WPF\obj\Debug\XO.exe
 D:\WORK\С# WPF\obj\Debug\XO.pdb
+D:\WORK\С# WPF\bin\Debug\IndexRange.dll
+D:\WORK\С# WPF\obj\Debug\XO.csproj.CopyComplete

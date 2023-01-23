@@ -17,18 +17,19 @@
         <Grid x:Name="XOs" Initialized="XOs_Initialized">
             <Button FontSize="40" MouseMove="War" x:Name="U" Margin="170,57,530,277" Height="100" Width="100" Content="" Click="XO_Click"></Button>
             <Button Click="XO_Click" FontSize="40" x:Name="UR" 
-            MouseMove="War" Margin="294,57,406,277" Height="100" Width="100" Content=""></Button>
-            <Button FontSize="40" Click="XO_Click" x:Name="D" Margin="170,295,528,34" Height="100" Width="100" Content=""></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="C" Click="XO_Click" Margin="170,181,530,153" Height="100" Width="100" Content=" " ></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="UL" Click="XO_Click" Margin="50,57,650,277" Height="100" Width="100" Content=" "></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="DL" Click="XO_Click" Margin="50,297,650,37" Height="100" Width="100" Content=" "></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="DR" Click="XO_Click" Margin="293,298,407,36" Height="100" Width="100" Content=" "></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="R" Click="XO_Click" Margin="295,181,405,153" Height="100" Width="100" Content=" "></Button>
-            <Button MouseMove="War" FontSize="40" x:Name="L" Click="XO_Click" Margin="50,181,650,153" Height="100" Width="100" Content=" "></Button>
+            MouseMove="War" Margin="294,57,406,277" Height="100" Width="100" Content=" "></Button>
+            <Button FontSize="40" Click="XO_Click" x:Name="D" Margin="170,295,528,34" Height="100" Width="100" Content="  "></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="C" Click="XO_Click" Margin="170,181,530,153" Height="100" Width="100" Content="    " ></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="UL" Click="XO_Click" Margin="50,57,650,277" Height="100" Width="100" Content="     "></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="DL" Click="XO_Click" Margin="50,297,650,37" Height="100" Width="100" Content="      "></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="DR" Click="XO_Click" Margin="293,298,407,36" Height="100" Width="100" Content="       "></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="R" Click="XO_Click" Margin="295,181,405,153" Height="100" Width="100" Content="        "></Button>
+            <Button MouseMove="War" FontSize="40" x:Name="L" Click="XO_Click" Margin="50,181,650,153" Height="100" Width="100" Content="          "></Button>
         </Grid>
         <Grid x:Name="Controls" HorizontalAlignment="Left" Width="260" Margin="520,85,0,64">
             <Button Content="Начать игру" HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" FontSize="20" Height="57" Width="136" Click="Button_Click"/>
-            <TextBlock x:Name="Debox" HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="202" Width="240" Background="White"/>
+            <TextBlock x:Name="Debox" HorizontalAlignment="Center" Margin="0,154,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="176" Width="240" Background="White" FontSize="22"/>
+            <Label x:Name="IndTurn" Content="Label" HorizontalAlignment="Center" Margin="0,103,0,0" VerticalAlignment="Top" Width="156" Height="46" FontSize="24" FontFamily="Arial Black" Foreground="White"/>
         </Grid>
 
     </Grid>
