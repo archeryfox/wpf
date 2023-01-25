@@ -27,69 +27,69 @@ namespace XO
             InitializeComponent();
 
         }
-        public int turn = 0;
+        /// <summary>
+        /// Номер хода
+        /// </summary>
+        public static int turn = 0;
+
+        public static int GameNum = 1;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            turn = 0;
+
             List<string> Coll = XOs.Children.OfType<Button>().Select(x => x.Content.ToString()).ToList();
-            List<string> Help =new List<string>() { "", " ", "  ", "   ", "    ","      ", "       ","         ","               "};
             List<Button> Gr = XOs.Children.OfType<Button>().ToList();
             Debox.Text = null;
+            GameNum++;
+            Player.sym = GameNum % 2 == 0 ? "X" : "0";
+            Robot.sym = GameNum % 2 == 0 ? "0" : "X";
+
             for (int i = 0; i < Gr.Count; i++)
             {
                 var ell = Gr[i];
-                ell.Content = Help[i];
+                ell.Content = "\n\n" + (i + 1);
                 ell.IsEnabled = true;
             }
             foreach (var item in Coll)
             {
                 Debox.Text += item;
             }
+
         }
+
         private void XO_Click(object sender, RoutedEventArgs e)
         {
             var b = sender as Button;
-            if (b.Content == "X" || b.Content == "0")
-            {
-                MessageBox.Show("Тут уже сходили!");
-            }
-            else
-            {
-                if (turn % 2 == 0)
-                {
-                    b.Content = "X";
-                    turn++;
-                    IndTurn.Content = turn + " Нолики";
-                }
-                else
-                {
-                    b.Content = "0";
-                    turn++;
-                    IndTurn.Content = turn + " Крестики";
-                }
+            List<Button> Gr = XOs.Children.OfType<Button>().ToList();
+            TurnCheck(b);
+            var rturn = Robot.RoboTurn(Gr);
+            Gr.Clear();
+            Gr = rturn;
 
-            }
             string[,] buts =
             {
                 {UL.Content.ToString(),U.Content.ToString(),UR.Content.ToString()},
                 {L.Content.ToString(),C.Content.ToString(),R.Content.ToString()},
                 {DL.Content.ToString(),D.Content.ToString(),DR.Content.ToString()}
             };
-            /*bool winU = false;
-            bool winC;
-            bool winD;*/
-            var win =
-                   ((buts[0, 0] == buts[0, 1]) && (buts[0, 2] == buts[0, 0]))
-                || ((buts[0, 0] == buts[1, 0]) && (buts[1, 0] == buts[0, 0]))
-                || ((buts[1, 0] == buts[1, 1]) && (buts[1, 2] == buts[1, 0]))
-                || ((buts[0, 1] == buts[1, 1]) && (buts[1, 2] == buts[2, 1]))
-                || ((buts[2, 0] == buts[2, 1]) && (buts[2, 2] == buts[2, 0]));
 
+            bool win = (buts[0, 0] == "X" && buts[1, 1] == "X" && buts[2, 2] == "X") ||
+                (buts[0, 0] == "0" && buts[1, 1] == "0" && buts[2, 2] == "0") ||
+                ((buts[0, 0] == "X" && buts[1, 0] == "X" && buts[2, 0] == "X") ||
+                (buts[0, 0] == "0" && buts[1, 0] == "0" && buts[2, 0] == "0")) ||
+                ((buts[0, 2] == "X" && buts[1, 1] == "X" && buts[2, 0] == "X") ||
+                (buts[0, 2] == "0" && buts[1, 1] == "0" && buts[2, 0] == "0") ||
+                ((buts[0, 1] == "X" && buts[1, 1] == "X" && buts[2, 1] == "X") ||
+                (buts[1, 1] == "0" && buts[1, 2] == "0" && buts[1, 0] == "0")) ||
+                ((buts[2, 2] == "X" && buts[1, 2] == "X" && buts[0, 2] == "X") ||
+                (buts[2, 2] == "0" && buts[1, 2] == "0" && buts[0, 2] == "0")) ||
+                (buts[0, 0] == "X" && buts[0, 1] == "X" && buts[0, 2] == "X") ||
+                (buts[0, 0] == "0" && buts[0, 1] == "0" && buts[0, 2] == "0") ||
+                (buts[1, 0] == "X" && buts[1, 1] == "X" && buts[1, 2] == "X") ||
+                (buts[1, 0] == "0" && buts[1, 1] == "0" && buts[1, 2] == "0") ||
+                (buts[2, 0] == "X" && buts[2, 1] == "X" && buts[2, 2] == "X") ||
+                (buts[2, 0] == "0" && buts[2, 1] == "0" && buts[2, 2] == "0"));
 
-            
-
-            List<Button> Gr = XOs.Children.OfType<Button>().ToList();
             if (win)
             {
                 for (int i = 0; i < Gr.Count; i++)
@@ -105,25 +105,59 @@ namespace XO
                 {
                     MessageBox.Show($"Выиграли крестики!");
                 }
+                win = false;
             }
-            win = false;
-
-        }
-
-        private void War(object sender, MouseEventArgs e)
-        {
-            /*  bool win = (U.Content == C.Content) && (D.Content == C.Content);
-              if (win)
-              {
-                  MessageBox.Show("центральная ветка");
-              }*/
+            else if (!win)
+            {
+                TieCheck(buts);
+            }
         }
 
         private void XOs_Initialized(object sender, EventArgs e)
         {
             List<Button> Gr = XOs.Children.OfType<Button>().ToList();
             const string _null = "";
+            for (int i = 0; i < Gr.Count; i++)
+            {
+                var ell = Gr[i];
+                ell.IsEnabled = false;
+            }
+        }
 
+        void TieCheck(string[,] field, bool win = false)
+        {
+            int i = 0;
+            foreach (var item in field)
+            {
+                i += item == "X" || item == "0" ? 1 : 0;
+            }
+            if (i == field.Length)
+            {
+                List<Button> Gr = XOs.Children.OfType<Button>().ToList();
+                const string _null = "";
+                MessageBox.Show("Ничья!");
+                for (int f = 0; f < Gr.Count; f++)
+                {
+                    var ell = Gr[f];
+                    ell.Content = _null;
+                    ell.IsEnabled = false;
+                    i = 0;
+                }
+            }
+        }
+
+        void TurnCheck(Button b)
+        {
+            if (b.Content == "X" || b.Content == "0")
+            {
+                MessageBox.Show("Тут уже сходили!");
+            }
+            else
+            {
+                b.Content = $"{Player.sym}";
+                IndTurn.Content = turn % 2 == 0 ? turn + " Нолики" : turn + " Крестики";
+                turn++;
+            }
         }
     }
 }
