@@ -31,8 +31,11 @@ namespace XO
         /// Номер хода
         /// </summary>
         public static int turn = 0;
+<<<<<<< HEAD
 
         public static int GameNum = 1; 
+=======
+>>>>>>> 70fde4691cc482f16982977c29a9fcdcd2a22f56
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -60,12 +63,20 @@ namespace XO
         private void XO_Click(object sender, RoutedEventArgs e)
         {
             var b = sender as Button;
+<<<<<<< HEAD
             List<Button> Gr = XOs.Children.OfType<Button>().ToList();
             TurnCheck(b);
             var rturn = Robot.RoboTurn(Gr);
             Gr.Clear();
             Gr = rturn;
 
+=======
+            TurnCheck(b);
+            List<Button> Gr = XOs.Children.OfType<Button>().ToList();
+            var rturn = Robot.RoboTurn(Gr);
+            
+            
+>>>>>>> 70fde4691cc482f16982977c29a9fcdcd2a22f56
             string[,] buts =
             {
                 {UL.Content.ToString(),U.Content.ToString(),UR.Content.ToString()},
