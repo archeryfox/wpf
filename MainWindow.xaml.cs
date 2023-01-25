@@ -32,7 +32,7 @@ namespace XO
         /// </summary>
         public static int turn = 0;
 
-        public static int GameNum = 1;
+        public static int GameNum = 1; 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
