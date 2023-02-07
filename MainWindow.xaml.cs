@@ -32,40 +32,37 @@ namespace XO
         /// </summary>
         public static int turn = 0;
 
-        public static int GameNum = 1; 
+        public static int GameNum = 1;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            List<string> Coll = XOs.Children.OfType<Button>().Select(x => x.Content.ToString()).ToList();
-            List<Button> Gr = XOs.Children.OfType<Button>().ToList();
+            List<string> ContentCollection = XOs.Children.OfType<Button>().Select(x => x.Content.ToString()).ToList();
+            List<Button> GridButtons = XOs.Children.OfType<Button>().ToList();
             Debox.Text = null;
+            Player.Sym = GameNum % 2 == 0 ? "X" : "0";
+            Robot.Sym = GameNum % 2 == 0 ? "0" : "X";
             GameNum++;
-            Player.sym = GameNum % 2 == 0 ? "X" : "0";
-            Robot.sym = GameNum % 2 == 0 ? "0" : "X";
 
-            for (int i = 0; i < Gr.Count; i++)
+            for (int i = 0; i < GridButtons.Count; i++)
             {
-                var ell = Gr[i];
+                var ell = GridButtons[i];
                 ell.Content = "\n\n" + (i + 1);
                 ell.IsEnabled = true;
             }
-            foreach (var item in Coll)
+            foreach (var item in ContentCollection)
             {
                 Debox.Text += item;
             }
 
         }
-
         private void XO_Click(object sender, RoutedEventArgs e)
         {
-            var b = sender as Button;
-            List<Button> Gr = XOs.Children.OfType<Button>().ToList();
-            TurnCheck(b);
-            var rturn = Robot.RoboTurn(Gr);
-            Gr.Clear();
-            Gr = rturn;
-
+            var B = sender as Button;
+            List<string> ContentCollection = XOs.Children.OfType<Button>().Select(x => x.Content.ToString()).ToList();
+            List<Button> GridButtons = XOs.Children.OfType<Button>().ToList();
+            TurnCheck(B);
+            Robot.RoboTurn(GridButtons);
             string[,] buts =
             {
                 {UL.Content.ToString(),U.Content.ToString(),UR.Content.ToString()},
@@ -92,16 +89,16 @@ namespace XO
 
             if (win)
             {
-                for (int i = 0; i < Gr.Count; i++)
+                for (int i = 0; i < GridButtons.Count; i++)
                 {
-                    var ell = Gr[i];
+                    var ell = GridButtons[i];
                     ell.IsEnabled = false;
                 }
-                if (b.Content == "0")
+                if (B.Content == "0")
                 {
                     MessageBox.Show($"Выиграли нолики!");
                 }
-                else if (b.Content == "X")
+                else if (B.Content == "X")
                 {
                     MessageBox.Show($"Выиграли крестики!");
                 }
@@ -111,6 +108,8 @@ namespace XO
             {
                 TieCheck(buts);
             }
+            Player.Turn = true;
+            Robot.Turn = false;
         }
 
         private void XOs_Initialized(object sender, EventArgs e)
@@ -148,15 +147,11 @@ namespace XO
 
         void TurnCheck(Button b)
         {
-            if (b.Content == "X" || b.Content == "0")
+            List<Button> BLIst = XOs.Children.OfType<Button>().Where(x => x.Content != "X" && x.Content != "0").ToList();
+            if (b.Content != "X" || b.Content != "0")
             {
-                MessageBox.Show("Тут уже сходили!");
-            }
-            else
-            {
-                b.Content = $"{Player.sym}";
-                IndTurn.Content = turn % 2 == 0 ? turn + " Нолики" : turn + " Крестики";
-                turn++;
+                b.Content = Player.Sym;
+                b.IsEnabled = false;
             }
         }
     }

@@ -8,7 +8,8 @@ namespace XO
 {
     public class Player
     {
-        static public string sym = "";
+        static public string Sym = "";
         static public bool X = true;
+        public static bool Turn = true;
     }
 }

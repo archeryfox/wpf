@@ -10,30 +10,56 @@ namespace XO
     public class Robot
     {
         private int randTouch;
-        public int RandTouch {
-            get { return randTouch =  new Random().Next(0,10); }
-        }
-        public static string sym;
-        public static List<Button> RoboTurn(List<Button> bs)
+
+        static public bool Turn = false;
+        public static string Sym;
+        public static int cell = 99;
+        public static void RoboTurn(List<Button> bs, int rand = 23)
         {
-            Robot robot = new Robot();
-            robot.randTouch = robot.RandTouch;
-            bool f;
+
             try
             {
-                while ((bs[robot.randTouch].Content != "X" && bs[robot.randTouch].Content != "0"))
+                var r = new Robot();
+                if (rand == 23)
                 {
-                    bs[robot.randTouch].Content = sym;
-                   
+                    int a = new Random().Next(1, bs.Count);
+                    if (bs[a - 1].IsEnabled)
+                    {
+                        bs[a - 1].Content = Robot.Sym;
+                        bs[a - 1].IsEnabled = false;
+                    }
+                    else
+                    {
+                        RoboTurn(bs, new Random().Next(1, bs.Count));
+                    }
+                }
+                if (rand != 23)
+                {
+                    int b = new Random().Next(1, bs.Count);
+                    while (true)
+                    {
+                        b = new Random().Next(1, bs.Count);
+                        
+                        if (bs[b - 1].IsEnabled)
+                        {
+                            bs[b - 1].Content = Robot.Sym;
+                            bs[b - 1].IsEnabled = false;
+                            return;
+                        }
+                        if (!bs[b - 1].IsEnabled)
+                        {
+                            RoboTurn(bs, new Random().Next(1, bs.Count));
+                        }
+                    }
+
                 }
             }
-            catch (Exception e)
+            catch (Exception we)
             {
-                //MessageBox.Show($"{e}");
+                MessageBox.Show(Convert.ToString(we));
             }
-            
-            //MessageBox.Show($"{f}");
-            return bs;
+
+
         }
     }
 }
