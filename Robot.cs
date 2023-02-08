@@ -13,53 +13,58 @@ namespace XO
 
         static public bool Turn = false;
         public static string Sym;
-        public static int cell = 99;
+        public static int cell = 9;
+
+        static int Ran(int i)
+        {
+            var r = new Random();
+            return r.Next(0, i);
+        }
         public static void RoboTurn(List<Button> bs, int rand = 23)
         {
+            int i = 0;
 
-            try
+            foreach (var item in bs)
             {
-                var r = new Robot();
-                if (rand == 23)
+                i += !item.IsEnabled ? 1 : 0;
+            }
+            if (i != bs.Count)
+            {
+                try
                 {
-                    int a = new Random().Next(1, bs.Count);
-                    if (bs[a - 1].IsEnabled)
+                    var r = new Robot();
+                    if (rand == 23)
                     {
-                        bs[a - 1].Content = Robot.Sym;
-                        bs[a - 1].IsEnabled = false;
-                    }
-                    else
-                    {
-                        RoboTurn(bs, new Random().Next(1, bs.Count));
-                    }
-                }
-                if (rand != 23)
-                {
-                    int b = new Random().Next(1, bs.Count);
-                    while (true)
-                    {
-                        b = new Random().Next(1, bs.Count);
-                        
-                        if (bs[b - 1].IsEnabled)
+                        int a = Ran(bs.Count);
+                        if (bs[a].IsEnabled)
                         {
-                            bs[b - 1].Content = Robot.Sym;
-                            bs[b - 1].IsEnabled = false;
+                            bs[a].Content = Robot.Sym;
+                            bs[a].IsEnabled = false;
                             return;
                         }
-                        if (!bs[b - 1].IsEnabled)
+                        else
                         {
-                            RoboTurn(bs, new Random().Next(1, bs.Count));
+                            do
+                            {
+                                a = Ran(bs.Count);
+                                RoboTurn(bs, a);
+                                if (bs[a].IsEnabled)
+                                {
+                                    bs[a].Content = Robot.Sym;
+                                    bs[a].IsEnabled = false;
+                                    return;
+                                }
+                            } while (!bs[a].IsEnabled);
+
                         }
                     }
-
                 }
-            }
-            catch (Exception we)
-            {
-                MessageBox.Show(Convert.ToString(we));
-            }
+                catch (Exception we)
+                {
+                    MessageBox.Show(Convert.ToString(we));
+                }
 
-
+            }
         }
     }
 }
