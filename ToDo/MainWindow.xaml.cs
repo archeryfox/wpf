@@ -27,13 +27,23 @@ namespace ToDo
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Сегодняшняя дата календаря
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Calendr_Initialized(object sender, EventArgs e)
         {
             (sender as DatePicker).Text = $"{DateTime.Now}";
         }
-
+        /// <summary>
+        /// Основной лист
+        /// </summary>
         List<Task> TaskList = new List<Task>();
+
+        /// <summary>
+        /// Создать заметку
+        /// </summary>
         private void CreateTaskButton_Click(object sender, RoutedEventArgs e)
         {
             Task task = new Task(TaskName.Text, TaskDescription.Text, Calendr.DisplayDate);
@@ -42,6 +52,9 @@ namespace ToDo
             ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
         }
 
+        /// <summary>
+        /// Сохранить в файл заметку
+        /// </summary>
         private void SaveTasksButton_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -72,7 +85,9 @@ namespace ToDo
                 File.WriteAllText(Task.FolderPath + fn, JsonConvert.SerializeObject(TaskList));
             }
         }
-
+        /// <summary>
+        /// Удалить заметку
+        /// </summary>
         private void DeleteTaskButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(ToDoList.SelectedIndex.ToString());
