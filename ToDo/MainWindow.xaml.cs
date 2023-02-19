@@ -76,6 +76,12 @@ namespace ToDo
         private void DeleteTaskButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(ToDoList.SelectedIndex.ToString());
+            if (ToDoList.SelectedItem != null)
+            {
+                TaskList.RemoveAt(ToDoList.SelectedIndex);
+                ToDoList.ItemsSource = TaskList;
+                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+            }
         }
 
         private void Calendr_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
