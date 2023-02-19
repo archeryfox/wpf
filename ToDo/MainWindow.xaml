@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ToDo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Тутурууу Лист(Отсылка на врата Штейна, кто не понял)" Height="430" Width="810">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" />
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="192*"/>
+            <RowDefinition Height="48*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border x:Name="TaskBorder" BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5" Grid.Row="2" Grid.RowSpan="3">
+            <ListBox x:Name="ToDoList"/>
+        </Border>
+        <DatePicker x:Name="Calendr" VerticalAlignment="Center" Grid.ColumnSpan="3" Initialized="Calendr_Initialized" IsTodayHighlighted="False"/>
+        <Label Content="Название" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>
+        <TextBox x:Name="TaskName" Margin="10,5,10,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" Grid.ColumnSpan="2"></TextBox>
+        <Label Content="Описание" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>
+        <TextBox x:Name="TaskDescription" Margin="10,5,10,5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
+        <Button x:Name="DeleteTaskButton" Grid.Column="0" Grid.Row="5" Margin="5,5,5,5" Content="Удалить запись" Click="DeleteTaskButton_Click"></Button>
+        <Button x:Name="SaveTasksButton" Grid.Column="1" Grid.Row="5" Margin="5,5,4,5" Content="Сохранить" Click="SaveTasksButton_Click"></Button>
+        <Button x:Name="CreateTaskButton" Grid.Column="2" Grid.Row="5" Margin="6,5,5,5" Content="Создать" Click="CreateTaskButton_Click"></Button>
+        <Label Content="Записки" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="26"/>
     </Grid>
 </Window>
