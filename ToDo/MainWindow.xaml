@@ -23,7 +23,7 @@
         <Border x:Name="TaskBorder" BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5" Grid.Row="2" Grid.RowSpan="3">
             <ListBox x:Name="ToDoList"/>
         </Border>
-        <DatePicker x:Name="Calendr" VerticalAlignment="Center" Grid.ColumnSpan="3" Initialized="Calendr_Initialized" IsTodayHighlighted="False"/>
+        <DatePicker x:Name="Calendr" VerticalAlignment="Center" Grid.ColumnSpan="3" Initialized="Calendr_Initialized" IsTodayHighlighted="False" Loaded="Calendr_Loaded" SelectedDateChanged="Calendr_SelectedDateChanged"/>
         <Label Content="Название" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>
         <TextBox x:Name="TaskName" Margin="10,5,10,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" Grid.ColumnSpan="2"></TextBox>
         <Label Content="Описание" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>

@@ -10,7 +10,9 @@ namespace ToDo
     {
         public readonly string Name;
         public readonly string Description;
-        public readonly DateTime DateTimeCreated;
+        public readonly int DateTimeDay;
+        public readonly int DateTimeMounth;
+        public readonly int DateTimeYear;
 
         public static string FileName = "Tasks.json";
         public static string FolderPath { get; set; }
@@ -19,7 +21,9 @@ namespace ToDo
         {
             this.Name = name;
             this.Description = description;
-            this.DateTimeCreated = dateTimeCreated;
+            this.DateTimeDay= dateTimeCreated.Day;
+            this.DateTimeMounth = dateTimeCreated.Month;
+            this.DateTimeYear = dateTimeCreated.Year;
         }
        
         static public void FolderDefault()

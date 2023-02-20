@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Microsoft.Win32;
 using System.IO;
 
@@ -27,6 +28,9 @@ namespace ToDo
         {
             InitializeComponent();
         }
+
+        List<Task> todayList = new List<Task>();
+
         /// <summary>
         /// Сегодняшняя дата календаря
         /// </summary>
@@ -35,6 +39,7 @@ namespace ToDo
         private void Calendr_Initialized(object sender, EventArgs e)
         {
             (sender as DatePicker).Text = $"{DateTime.Now}";
+
         }
         /// <summary>
         /// Основной лист
@@ -46,9 +51,17 @@ namespace ToDo
         /// </summary>
         private void CreateTaskButton_Click(object sender, RoutedEventArgs e)
         {
+            var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
+            var file = File.ReadAllText(way + Task.FileName);
+            //Поправить баг с загрузукой записок
             Task task = new Task(TaskName.Text, TaskDescription.Text, Calendr.DisplayDate);
+            TaskList = JsonConvert.DeserializeObject<List<Task>>(file);
+            //MessageBox.Show(file);
             TaskList.Add(task);
+            var js = JsonConvert.SerializeObject(TaskList);
+            File.WriteAllText(way + Task.FileName, js);
             ToDoList.ItemsSource = TaskList;
+            ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Where(x => x.DateTimeDay == Calendr.DisplayDate.Day && x.DateTimeMounth == Calendr.DisplayDate.Month).ToList();
             ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
         }
 
@@ -87,6 +100,10 @@ namespace ToDo
         }
         /// <summary>
         /// Удалить заметку
+        /// 
+        /// 
+        /// 
+        /// НАЙТИ ИНДЕКС ВЫДЕЛЕННОГО ЭЛЕМЕНТА В МАССИВЕ ЛИСТА И УДАЛИТЬ
         /// </summary>
         private void DeleteTaskButton_Click(object sender, RoutedEventArgs e)
         {
@@ -101,7 +118,27 @@ namespace ToDo
 
         private void Calendr_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            MessageBox.Show(Calendr.Text);
+            //MessageBox.Show(Calendr.Text);
+            var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
+            if (Task.FolderCreated || Directory.Exists(way))
+            {
+                var file = File.ReadAllText(way + Task.FileName);
+                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => x.DateTimeDay == Calendr.DisplayDate.Day).ToList();
+                ToDoList.ItemsSource = todayList;
+                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+            }
+        }
+
+        private void Calendr_Loaded(object sender, RoutedEventArgs e)
+        {
+            var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
+            if (Task.FolderCreated || Directory.Exists(way))
+            {
+                var file = File.ReadAllText(way + Task.FileName);
+                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => x.DateTimeDay == Calendr.DisplayDate.Day).ToList();
+                ToDoList.ItemsSource = todayList;
+                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+            }
         }
     }
 }
