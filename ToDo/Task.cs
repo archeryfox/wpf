@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace ToDo
 {
@@ -12,22 +13,24 @@ namespace ToDo
     {
         public readonly string Name;
         public readonly string Description;
-        public readonly int DateTimeDay = DateTime.Today.Day;
-        public readonly int DateTimeMounth = DateTime.Today.Month;
-        public readonly int DateTimeYear = DateTime.Today.Year;
+        public readonly DateTime dt = DateTime.Today;
+        public readonly string DateTimeDay = DateTime.Today.Day.ToString();
+        public readonly string DateTimeMounth = DateTime.Today.Month.ToString();
+        public readonly string DateTimeYear = DateTime.Today.Year.ToString();
 
         public static string FileName = "Tasks.json";
         public static string FolderPath { get; set; }
         public static bool FolderCreated { get; private set; }
         public Task(string name, string description, DateTime dateTimeCreated)
         {
-            this.Name = name;
-            this.Description = description;
-            this.DateTimeDay= dateTimeCreated.Day;
-            this.DateTimeMounth = dateTimeCreated.Month;
-            this.DateTimeYear = 2023;
+            Name = name;
+            Description = description;
+            dt = dateTimeCreated;
+            DateTimeDay = dateTimeCreated.Day.ToString();
+            DateTimeMounth = dateTimeCreated.Month.ToString();
+            DateTimeYear = "2023";
         }
-       
+        
         static public void FolderDefault()
         {
             FolderCreated = true;
