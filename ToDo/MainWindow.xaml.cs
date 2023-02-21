@@ -31,43 +31,44 @@ namespace ToDo
 
         List<Task> todayList = new List<Task>();
 
-        /// <summary>
-        /// Сегодняшняя дата календаря
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Calendr_Initialized(object sender, EventArgs e)
         {
-            (sender as DatePicker).Text = $"{DateTime.Now}";
+            (sender as DatePicker).DisplayDate = DateTime.Now;
+            (sender as DatePicker).Text = DateTime.Now.ToString();
+            var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
+            if (Task.FolderCreated || Directory.Exists(way))
+            {
+                var file = File.ReadAllText(way + Task.FileName);
+                todayList.Clear();
+                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => x.DateTimeDay == Calendr.DisplayDate.Day).ToList();
+                ToDoList.ItemsSource = null;
+                ToDoList.ItemsSource = todayList;
+                ToDoList.ItemsSource = ToDoList.ItemsSource.OfType<Task>().Select(x => x.Name).ToList();
+            }
 
         }
-        /// <summary>
-        /// Основной лист
-        /// </summary>
         List<Task> TaskList = new List<Task>();
 
-        /// <summary>
-        /// Создать заметку
-        /// </summary>
         private void CreateTaskButton_Click(object sender, RoutedEventArgs e)
         {
             var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
             var file = File.ReadAllText(way + Task.FileName);
             //Поправить баг с загрузукой записок
-            Task task = new Task(TaskName.Text, TaskDescription.Text, Calendr.DisplayDate);
+            Task task = new Task(TaskName.Text, TaskDescription.Text, Convert.ToDateTime(Calendr.Text));
             TaskList = JsonConvert.DeserializeObject<List<Task>>(file);
-            //MessageBox.Show(file);
+
             TaskList.Add(task);
-            var js = JsonConvert.SerializeObject(TaskList);
-            File.WriteAllText(way + Task.FileName, js);
-            ToDoList.ItemsSource = TaskList;
-            ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Where(x => x.DateTimeDay == Calendr.DisplayDate.Day && x.DateTimeMounth == Calendr.DisplayDate.Month).ToList();
-            ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+            
+            if (Task.FolderCreated || Directory.Exists(way))
+            {
+                var a = TaskList.OfType<Task>().Where(x => x.DateTimeDay == Calendr.DisplayDate.Day && x.DateTimeMounth == Calendr.DisplayDate.Month).ToList();
+                ToDoList.ItemsSource = null;
+                ToDoList.ItemsSource = a.OfType<Task>().Select(x => x.Name).ToList();
+                var js = JsonConvert.SerializeObject(TaskList);
+                File.WriteAllText(way + Task.FileName, js);
+            }
         }
 
-        /// <summary>
-        /// Сохранить в файл заметку
-        /// </summary>
         private void SaveTasksButton_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -95,18 +96,26 @@ namespace ToDo
                 Task.FolderDefault();
                 Task.FileName = fn;
                 Task.FolderPath = way + "\\Tasks\\";
+                var d = "";
+                foreach (var item in TaskList)
+                {
+                    d += item.Name + ":" + item.DateTimeDay + "\n";
+                }
+                MessageBox.Show(d);
                 File.WriteAllText(Task.FolderPath + fn, JsonConvert.SerializeObject(TaskList));
             }
         }
-        /// <summary>
-        /// Удалить заметку
-        /// 
-        /// 
-        /// 
-        /// НАЙТИ ИНДЕКС ВЫДЕЛЕННОГО ЭЛЕМЕНТА В МАССИВЕ ЛИСТА И УДАЛИТЬ
-        /// </summary>
+
         private void DeleteTaskButton_Click(object sender, RoutedEventArgs e)
         {
+            var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
+            if (Task.FolderCreated || Directory.Exists(way))
+            {
+                var file = File.ReadAllText(way + Task.FileName);
+                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => x.DateTimeDay == Calendr.DisplayDate.Day).ToList();
+                ToDoList.ItemsSource = todayList;
+                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+            }
             MessageBox.Show(ToDoList.SelectedIndex.ToString());
             if (ToDoList.SelectedItem != null)
             {
@@ -118,7 +127,7 @@ namespace ToDo
 
         private void Calendr_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-            //MessageBox.Show(Calendr.Text);
+            //MessageBox.Show(Calendr.DisplayDate.ToString());
             var way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
             if (Task.FolderCreated || Directory.Exists(way))
             {
@@ -135,7 +144,8 @@ namespace ToDo
             if (Task.FolderCreated || Directory.Exists(way))
             {
                 var file = File.ReadAllText(way + Task.FileName);
-                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => x.DateTimeDay == Calendr.DisplayDate.Day).ToList();
+                todayList = JsonConvert.DeserializeObject<List<Task>>(file).Where(x => (x.DateTimeDay == Calendr.DisplayDate.Day)
+                && (x.DateTimeMounth == Calendr.DisplayDate.Month)).ToList();
                 ToDoList.ItemsSource = todayList;
                 ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
             }
