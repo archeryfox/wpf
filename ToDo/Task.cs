@@ -13,24 +13,26 @@ namespace ToDo
     {
         public readonly string Name;
         public readonly string Description;
-        public readonly DateTime dt = DateTime.Today;
-        public readonly string DateTimeDay = DateTime.Today.Day.ToString();
-        public readonly string DateTimeMounth = DateTime.Today.Month.ToString();
-        public readonly string DateTimeYear = DateTime.Today.Year.ToString();
+        public int ID;
+        public DateTime dt;
+        public int DateTimeDay { get; set; }
+        public int  DateTimeMounth { get; set; }
+        public int DateTimeYear { get; set; }
 
         public static string FileName = "Tasks.json";
         public static string FolderPath { get; set; }
         public static bool FolderCreated { get; private set; }
-        public Task(string name, string description, DateTime dateTimeCreated)
+        public Task(string name, string description, int id, DateTime dateTimeCreated)
         {
             Name = name;
             Description = description;
+            ID = id;
             dt = dateTimeCreated;
-            DateTimeDay = dateTimeCreated.Day.ToString();
-            DateTimeMounth = dateTimeCreated.Month.ToString();
-            DateTimeYear = "2023";
+            DateTimeDay = dateTimeCreated.Day;
+            DateTimeMounth = dateTimeCreated.Month;
+            DateTimeYear = 2023;
         }
-        
+
         static public void FolderDefault()
         {
             FolderCreated = true;

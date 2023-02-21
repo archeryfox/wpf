@@ -21,16 +21,27 @@
             <RowDefinition Height="48*"></RowDefinition>
         </Grid.RowDefinitions>
         <Border x:Name="TaskBorder" BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5" Grid.Row="2" Grid.RowSpan="3">
-            <ListBox x:Name="ToDoList"/>
+            <ListBox SelectionChanged="ToDoList_SelectionChanged" x:Name="ToDoList">
+            </ListBox>
         </Border>
         <DatePicker x:Name="Calendr" VerticalAlignment="Center" Grid.ColumnSpan="3" Initialized="Calendr_Initialized" IsTodayHighlighted="False" Loaded="Calendr_Loaded" SelectedDateChanged="Calendr_SelectedDateChanged"/>
         <Label Content="Название" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>
         <TextBox x:Name="TaskName" Margin="10,5,10,5" Grid.Row="2" Grid.Column="1" VerticalContentAlignment="Center" Grid.ColumnSpan="2"></TextBox>
         <Label Content="Описание" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Height="26"/>
-        <TextBox x:Name="TaskDescription" Margin="10,5,10,5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
+        <TextBox ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+         ScrollViewer.VerticalScrollBarVisibility="Visible"
+         ScrollViewer.CanContentScroll="True" TextWrapping="Wrap" x:Name="TaskDescription" Margin="10,5,10,5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
         <Button x:Name="DeleteTaskButton" Grid.Column="0" Grid.Row="5" Margin="5,5,5,5" Content="Удалить запись" Click="DeleteTaskButton_Click"></Button>
         <Button x:Name="SaveTasksButton" Grid.Column="1" Grid.Row="5" Margin="5,5,4,5" Content="Сохранить" Click="SaveTasksButton_Click"></Button>
-        <Button x:Name="CreateTaskButton" Grid.Column="2" Grid.Row="5" Margin="6,5,5,5" Content="Создать" Click="CreateTaskButton_Click"></Button>
+        <Grid Grid.Column="2" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="CreateTaskButton" Grid.Column="0" Margin="6,5,5,5" Content="Создать" Click="CreateTaskButton_Click"></Button>
+            <Button x:Name="DuplicateTaskButton" Grid.Column="1" Margin="6,5,5,5" Content="Дублировать" Click="DuplicateTaskButton_Click"
+                    ToolTip="Это для того чтобы дублировать или изменить заметку"></Button>
+        </Grid>
         <Label Content="Записки" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="26"/>
     </Grid>
 </Window>
