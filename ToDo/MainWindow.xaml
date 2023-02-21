@@ -32,7 +32,14 @@
          ScrollViewer.VerticalScrollBarVisibility="Visible"
          ScrollViewer.CanContentScroll="True" TextWrapping="Wrap" x:Name="TaskDescription" Margin="10,5,10,5" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"></TextBox>
         <Button x:Name="DeleteTaskButton" Grid.Column="0" Grid.Row="5" Margin="5,5,5,5" Content="Удалить запись" Click="DeleteTaskButton_Click"></Button>
-        <Button x:Name="SaveTasksButton" Grid.Column="1" Grid.Row="5" Margin="5,5,4,5" Content="Сохранить" Click="SaveTasksButton_Click"></Button>
+        <Grid Grid.Column="1" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="SaveTasksButton" Margin="5,5,4,5" Content="Сохранить" Click="SaveTasksButton_Click"></Button>
+            <Button x:Name="EditTaskButton" Grid.Column="1" Margin="5,5,4,5" Content="Изменить" Click="EditTaskButton_Click"></Button>
+        </Grid>
         <Grid Grid.Column="2" Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />

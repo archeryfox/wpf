@@ -11,8 +11,8 @@ namespace ToDo
 {
     public class Task
     {
-        public readonly string Name;
-        public readonly string Description;
+        public string Name { get; private set; }
+        public string Description { get; private set; }
         public int ID;
         public DateTime dt;
         public int DateTimeDay { get; set; }
@@ -22,6 +22,14 @@ namespace ToDo
         public static string FileName = "Tasks.json";
         public static string FolderPath { get; set; }
         public static bool FolderCreated { get; private set; }
+        public void NameMod(string Text)
+        {
+            this.Name = Text;
+        }
+        public void DescriptMod(string Text)
+        {
+            this.Description = Text;
+        }
         public Task(string name, string description, int id, DateTime dateTimeCreated)
         {
             Name = name;

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace ToDo
 {
@@ -31,26 +32,45 @@ namespace ToDo
         private void Calendr_Initialized(object sender, EventArgs e)
         {
             (sender as DatePicker).Text = DateTime.Now.ToString();
-
         }
 
         private void CreateTaskButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day && x.dt.Month == Convert.ToDateTime(Calendr.Text).Month).ToList();
+            var Counts = ToDoList.Items.Count;
+            if (a.Any(t => t.Name == TaskName.Text && t.Description == TaskDescription.Text))
+            {
+                MessageBox.Show("Вы не можете создать новую точно такую же запись, надо её тогда дублировать!");
+                TaskName.Text = string.Empty;
+                TaskDescription.Text = string.Empty;
+            }
+            else if (TaskName.Text == "" && TaskDescription.Text.Split(' ').All<string>(x => x == ""))
+            {
+                MessageBox.Show("Вы не можете создать Пустую заметку, её надо заполнить!");
+                TaskName.Text = string.Empty;
+                TaskDescription.Text = string.Empty;
+            }
+            else
+            {
+                TList.Add(new Task(TaskName.Text, TaskDescription.Text, Counts, Convert.ToDateTime(Calendr.Text)));
+                a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day && x.dt.Month == Convert.ToDateTime(Calendr.Text).Month).ToList();
+                ToDoList.ItemsSource = null;
+                ToDoList.ItemsSource = from p in a
+                                       orderby p.ID
+                                       select p;
+                ToDoList.ItemsSource = ToDoList.ItemsSource.OfType<Task>().Select(x => x.Name).ToList();
+            }
         }
         private void DuplicateTaskButton_Click(object sender, RoutedEventArgs e)
         {
             var Counts = ToDoList.Items.Count;
             TList.Add(new Task(TaskName.Text, TaskDescription.Text, Counts, Convert.ToDateTime(Calendr.Text)));
-            if (Task.FolderCreated || Directory.Exists(way))
-            {
-                var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day && x.dt.Month == Convert.ToDateTime(Calendr.Text).Month).ToList();
-                ToDoList.ItemsSource = null;
-                ToDoList.ItemsSource = from p in a
-                                       orderby p.ID
-                                       select p;
-                ToDoList.ItemsSource = a.OfType<Task>().Select(x => x.Name).ToList();
-            }
+            var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day && x.dt.Month == Convert.ToDateTime(Calendr.Text).Month).ToList();
+            ToDoList.ItemsSource = null;
+            ToDoList.ItemsSource = from p in a
+                                   orderby p.ID
+                                   select p;
+            ToDoList.ItemsSource = ToDoList.ItemsSource.OfType<Task>().Select(x => x.Name).ToList();
         }
         private void SaveTasksButton_Click(object sender, RoutedEventArgs e)
         {
@@ -83,23 +103,35 @@ namespace ToDo
                 {
                     d += item.Name + ":" + item.DateTimeDay + "\n";
                 }
-                MessageBox.Show(d);
+                //MessageBox.Show(d);
                 File.WriteAllText(Task.FolderPath + Task.FileName, JsonConvert.SerializeObject(TList));
             }
         }
 
         private void DeleteTaskButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Task.FolderCreated || Directory.Exists(way))
+            if (ToDoList.SelectedItem != null && ToDoList.SelectedIndex != -1)
             {
-                ToDoList.ItemsSource = todayList;
-                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
-            }
-            if (ToDoList.SelectedItem != null)
-            {
-                TList.RemoveAt(ToDoList.SelectedIndex);
-                ToDoList.ItemsSource = TList;
-                ToDoList.ItemsSource = ToDoList.Items.OfType<Task>().Select(x => x.Name).ToList();
+                try
+                {
+                    var lbxitm = ToDoList.SelectedItem.ToString();
+                    var lbxid = ToDoList.SelectedIndex;
+                    var today = ToDoList.Items[lbxid].ToString();
+                    //MessageBox.Show(today);
+                    //MessageBox.Show(TList[TList.FindIndex(x => x.Name == lbxitm)].Description.ToString());
+                    TList.RemoveAt(TList.FindIndex(x => x.ID == lbxid));
+                    var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day).ToList();
+                    for (int i = 0; i < a.Count; i++) { a[i].ID = i; }
+                    ToDoList.ItemsSource = from p in a
+                                           orderby p.ID
+                                           select p;
+                    var d = a.OfType<Task>().Select(x => x.Name).ToList();
+                    ToDoList.ItemsSource = null;
+                    ToDoList.ItemsSource = d;
+                    
+                    File.WriteAllText(file, JsonConvert.SerializeObject(TList));
+                }
+                catch (Exception) { }
             }
         }
 
@@ -110,11 +142,13 @@ namespace ToDo
 
         private void Calendr_Loaded(object sender, RoutedEventArgs e)
         {
-
+            /*ighcghc*/
         }
 
         void Sync()
         {
+            //дописать везде существует ли файл!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            пукпыкуппк
             TList = JsonConvert.DeserializeObject<List<Task>>(file).ToList(); // Чтение файла
             var list = TList.Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day).ToList(); // Выбрал только в этот день
             ToDoList.ItemsSource = null;
@@ -133,7 +167,7 @@ namespace ToDo
                     var lbxitm = ToDoList.SelectedItem.ToString();
                     var lbxid = ToDoList.SelectedIndex;
                     var today = ToDoList.Items[lbxid].ToString();
-                    MessageBox.Show(today);
+                    //MessageBox.Show(today);
                     //MessageBox.Show(TList[TList.FindIndex(x => x.Name == lbxitm)].Description.ToString());
                     TaskName.Text = null;
                     TaskName.Text = lbxitm;
@@ -144,6 +178,28 @@ namespace ToDo
             }
         }
 
-
+        private void EditTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ToDoList.SelectedItem != null && ToDoList.SelectedIndex != -1)
+            {
+                try
+                {
+                    var lbxitm = ToDoList.SelectedItem.ToString();
+                    var lbxid = ToDoList.SelectedIndex;
+                    var today = ToDoList.Items[lbxid].ToString();
+                    TList[TList.FindIndex(x => x.ID == lbxid)].NameMod(TaskName.Text);
+                    TList[TList.FindIndex(x => x.ID == lbxid)].DescriptMod(TaskDescription.Text);
+                    var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day).ToList();
+                    ToDoList.ItemsSource = from p in a
+                                           orderby p.ID
+                                           select p;
+                    var d = a.OfType<Task>().Select(x => x.Name).ToList();
+                    ToDoList.ItemsSource = null;
+                    ToDoList.ItemsSource = d;
+                    File.WriteAllText(file, JsonConvert.SerializeObject(TList));
+                }
+                catch (Exception) { }
+            }
+        }
     }
 }
