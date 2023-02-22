@@ -24,7 +24,6 @@ namespace ToDo
             InitializeComponent();
         }
 
-        List<Task> todayList = new List<Task>();
         static string way = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Tasks\\";
         string file;
         List<Task> TList = new List<Task>();
@@ -63,6 +62,13 @@ namespace ToDo
         }
         private void DuplicateTaskButton_Click(object sender, RoutedEventArgs e)
         {
+            if (TaskName.Text == "" && TaskDescription.Text.Split(' ').All<string>(x => x == ""))
+            {
+                MessageBox.Show("Вы не можете создать Пустую заметку, её надо заполнить!");
+                TaskName.Text = string.Empty;
+                TaskDescription.Text = string.Empty;
+                return;
+            }
             var Counts = ToDoList.Items.Count;
             TList.Add(new Task(TaskName.Text, TaskDescription.Text, Counts, Convert.ToDateTime(Calendr.Text)));
             var a = TList.OfType<Task>().Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day && x.dt.Month == Convert.ToDateTime(Calendr.Text).Month).ToList();
@@ -77,8 +83,7 @@ namespace ToDo
             SaveFileDialog saveFileDialog = new SaveFileDialog();
 
             string js = JsonConvert.SerializeObject(TList);
-            //MessageBox.Show(js);
-            if (!Directory.Exists(way) && !Task.FolderCreated)
+            if (Directory.Exists(way) && !Task.FolderCreated)
             {
                 if (MessageBox.Show("Задать папку для заметок?", "Mmm?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
@@ -98,12 +103,6 @@ namespace ToDo
             {
                 Task.FolderDefault();
                 Task.FolderPath = way;
-                var d = "";
-                foreach (var item in TList)
-                {
-                    d += item.Name + ":" + item.DateTimeDay + "\n";
-                }
-                //MessageBox.Show(d);
                 File.WriteAllText(Task.FolderPath + Task.FileName, JsonConvert.SerializeObject(TList));
             }
         }
@@ -148,8 +147,9 @@ namespace ToDo
         void Sync()
         {
             //дописать везде существует ли файл!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            пукпыкуппк
+            //пукпыкуппк
             TList = JsonConvert.DeserializeObject<List<Task>>(file).ToList(); // Чтение файла
+            JS<Task>.DE();
             var list = TList.Where(x => x.dt.Day == Convert.ToDateTime(Calendr.Text).Day).ToList(); // Выбрал только в этот день
             ToDoList.ItemsSource = null;
             if (list.Count != 0)

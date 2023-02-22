@@ -54,3 +54,21 @@ C:\Users\USER.DESKTOP-GPQNH18\Source\Repos\archeryfox\wpf\ToDo\bin\Debug\System.
 C:\Users\USER.DESKTOP-GPQNH18\Source\Repos\archeryfox\wpf\ToDo\bin\Debug\System.Text.Json.xml
 C:\Users\USER.DESKTOP-GPQNH18\Source\Repos\archeryfox\wpf\ToDo\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\USER.DESKTOP-GPQNH18\Source\Repos\archeryfox\wpf\ToDo\bin\Debug\System.ValueTuple.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Buffers.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Memory.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Numerics.Vectors.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Text.Encodings.Web.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Text.Json.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\System.ValueTuple.dll
+D:\WORK\С# WPF\ToDo\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Buffers.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Memory.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Numerics.Vectors.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Text.Encodings.Web.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Text.Json.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\WORK\С# WPF\ToDo\bin\Debug\System.ValueTuple.xml
