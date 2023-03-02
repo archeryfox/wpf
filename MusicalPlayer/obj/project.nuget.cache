@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "a/+i11i095wLUuiKZvsetUkzXN7aqcOyDbsUSCoddyaIHuBvXPEL1xUjE+LjMk4WvGzLZ+2X70efAfUf3O4vDA==",
+  "success": true,
+  "projectFilePath": "G:\\site\\C#\\wpf\\MusicalPlayer\\MusicalPlayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER.DESKTOP-GPQNH18\\.nuget\\packages\\materialdesigncolors\\2.1.2\\materialdesigncolors.2.1.2.nupkg.sha512",
+    "C:\\Users\\USER.DESKTOP-GPQNH18\\.nuget\\packages\\materialdesignthemes\\4.8.0\\materialdesignthemes.4.8.0.nupkg.sha512",
+    "C:\\Users\\USER.DESKTOP-GPQNH18\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
