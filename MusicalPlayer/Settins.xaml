@@ -1,0 +1,27 @@
+﻿<Window x:Class="MusicalPlayer.Settins"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicalPlayer"
+        mc:Ignorable="d"
+        
+        Title="Settins" Height="260" Width="350">
+    <Grid Background="#FF1F1F20">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Border HorizontalAlignment="Center"
+                 VerticalAlignment="Center" Padding="3" BorderBrush="Black" Height="22">
+            <TextBlock x:Name="Path" Text="C:/Music" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="AliceBlue"></TextBlock>
+        </Border>
+        <Button Background="#FFD1D1D1" Grid.Column="2" HorizontalAlignment="Center" Content="Обзор" Width="74" Height="32" VerticalAlignment="Center" />
+    </Grid>
+</Window>
