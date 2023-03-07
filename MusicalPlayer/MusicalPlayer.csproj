@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="ab67616d0000b273ddaa839834560c88baeef15e.jpg" />
+    <None Remove="akita-inu.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
 
   <ItemGroup>
     <Resource Include="ab67616d0000b273ddaa839834560c88baeef15e.jpg" />
+    <Resource Include="akita-inu.png" />
   </ItemGroup>
 
 </Project>

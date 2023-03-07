@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MusicalPlayer"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="MusicalPlayer.MainWindow"
         mc:Ignorable="d"
-        Title="Musical Player" Height="470" Width="800" WindowStyle="ThreeDBorderWindow">
+        Title="Musical Player" Height="470" Width="800" WindowStyle="ThreeDBorderWindow" Icon="/akita-inu.png">
     <Grid Background="#FF1F1F20">
         <Grid.RowDefinitions>
             <RowDefinition Height="54*"/>
@@ -66,7 +66,7 @@
             <Button Width="30" x:Name="Shuflle" Click="Shuflle_Click" Content="🔀" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="32"/>
             <Button Width="30" x:Name="ReperatButt" Click="ReperatButt_Click" Content="🔄" Grid.Column="3" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="32"/>
             <Button Grid.Column="1" x:Name="Plays" Click="Plays_Click"  Grid.Row="2" Width="35" FontSize="20" Content="▶" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="35"/>
-            <Button Grid.Column="2" FontSize="20" x:Name="StopB" Click="StopB_Click" Grid.Row="2" Width="30" Content="⬛" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="32"></Button>
+            <Button Grid.Column="2" x:Name="StopB" Click="StopB_Click" Grid.Row="2" Width="30" Content="⬛" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="32"></Button>
             <Button x:Name="Nexts" Click="Nexts_Click" Grid.Column="3" Grid.Row="2" Width="30" Content="▶I" VerticalAlignment="Center" Foreground="#FFFF5722" Padding="0" Background="#00000000" HorizontalAlignment="Center" Height="32"></Button>
         </Grid>
         <ListBox x:Name="MusicList" SelectionChanged="MusicList_SelectionChanged" Padding="5" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="3"  Margin="3,3,0,0" Grid.Row="1" Initialized="MusicList_Initialized"></ListBox>
