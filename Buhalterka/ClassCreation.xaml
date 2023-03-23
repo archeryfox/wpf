@@ -1,0 +1,68 @@
+﻿<Page x:Class="Buhalterka.ClassCreation"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Buhalterka"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="520"
+      Title="BossCreation">
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF202020" />
+            <GradientStop Color="#FF8DE000" Offset="2"/>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Content="Карточки классов" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox SelectionChanged="ClassList_SelectionChanged" x:Name="ClassList" VerticalAlignment="Bottom" Foreground="AliceBlue" FontSize="30">
+            <ComboBoxItem Content="Мечник"/>
+            <ComboBoxItem Content="Лучник"/>
+            <ComboBoxItem Content="Маг"/>
+            <ComboBoxItem Content="Вор"/>
+        </ComboBox>
+        <Label Content="Название" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="ClassName" Foreground="AliceBlue" Grid.Row="1" FontSize="25" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+        <Label Content="Силён перед" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="BeatsClass" VerticalAlignment="Bottom" Foreground="AliceBlue" Grid.Row="2" SelectedIndex="0" FontSize="30">
+            <ComboBoxItem Content="Мечник"/>
+            <ComboBoxItem Content="Лучник"/>
+            <ComboBoxItem Content="Маг"/>
+            <ComboBoxItem Content="Вор"/>
+        </ComboBox>
+        <Label Content="Слаб перед" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="WeaksClass" VerticalAlignment="Bottom" Foreground="AliceBlue" Grid.Row="3" SelectedIndex="1" FontSize="30">
+            <ComboBoxItem Content="Мечник"/>
+            <ComboBoxItem Content="Лучник"/>
+            <ComboBoxItem Content="Маг"/>
+            <ComboBoxItem Content="Вор"/>
+        </ComboBox>
+        <Label Content="Предпочитаемый тип" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="PreferType" VerticalAlignment="Bottom" Foreground="AliceBlue" Grid.Row="4" SelectedIndex="1" FontSize="30">
+            <ComboBoxItem Content="Без ограничения"/>
+            <ComboBoxItem Content="Огонь"/>
+            <ComboBoxItem Content="Вода"/>
+            <ComboBoxItem Content="Земля"/>
+            <ComboBoxItem Content="Воздух"/>
+        </ComboBox>
+        <Label Content="Невозможный тип" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="ImpossibleType" VerticalAlignment="Bottom" Foreground="AliceBlue" Grid.Row="5" SelectedIndex="0" FontSize="30">
+            <ComboBoxItem Content="Без ограничения"/>
+            <ComboBoxItem Content="Огонь"/>
+            <ComboBoxItem Content="Вода"/>
+            <ComboBoxItem Content="Земля"/>
+            <ComboBoxItem Content="Воздух"/>
+        </ComboBox>
+        <Button x:Name="PutIt" Grid.Row="6" Background="LimeGreen" BorderBrush="DarkGreen" Content="Заложить" Foreground="AliceBlue" FontSize="35" VerticalAlignment="Bottom" Height="60" HorizontalAlignment="Center" Cursor="Hand" Click="PutIt_Click"/>
+    </Grid>
+</Page>
