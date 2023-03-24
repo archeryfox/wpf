@@ -1,40 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Buhalterka.Boss">
-    <Position X="3.25" Y="1.25" Width="1.5" />
+    <Position X="12.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAQAAIAlAAAAAAAAAAAAQAA=</HashCode>
+      <HashCode>AAAAAABAAAAAAACAAAAAACQAAIAEAAAAAQAAAIEQQAA=</HashCode>
       <FileName>Boss.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Buhalterka.Class">
-    <Position X="5" Y="1.25" Width="1.5" />
+  <Class Name="Buhalterka.BossCreation" BaseTypeListCollapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAABAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>BossCreation.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Buhalterka.Class">
+    <Position X="14" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAADAAAAAAQAAAAEAAACBAAAAAAAAAA=</HashCode>
       <FileName>Class.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Buhalterka.Creation" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="6.75" Y="2.25" Width="1.5" />
+  <Class Name="Buhalterka.ClassCreation" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassCreation.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Buhalterka.Creation" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAACAAAAQ=</HashCode>
       <FileName>Creation.xaml.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.1" Collapsed="true" />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Buhalterka.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAIAAAAAAASAABCBACAgEAAAAAAAAAIQABAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Buhalterka.Turn">
-    <Position X="8.5" Y="1.25" Width="1.5" />
+    <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAAAFAAAAAQAAAAAAABA=</HashCode>
+      <HashCode>AAACAACAAAAAgAAAAAICAAAAAgABIIAAIQCAIABAADA=</HashCode>
       <FileName>Turn.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Buhalterka.Type">
-    <Position X="6.75" Y="1.25" Width="1.5" />
+    <Position X="15.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAQAAAAAAAQAAAAEAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AgAAQAAAAAAAAAQAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Type.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Buhalterka.TypeCreation" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>TypeCreation.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Struct Name="Buhalterka.SubIndex">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>SubIndex.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

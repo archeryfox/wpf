@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="69*" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
-            <TextBlock x:Name="BossInfo" Text="boss info" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="18" Foreground="White" Height="26"/>
+            <TextBlock x:Name="BossInfo" Text="boss info" TextAlignment="Center" VerticalAlignment="Center" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="18" Foreground="White" />
             <Button Grid.Column="0" ToolTip="Добавить босса/класс/заклинание" x:Name="AddSmth" Click="AddSmth_Click"  Style="{StaticResource MaterialDesignIconButton}" Foreground="AliceBlue"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <materialDesign:PackIcon  Kind="Add" HorizontalAlignment="Center" Height="48" VerticalAlignment="Center" Width="48" />
             </Button>

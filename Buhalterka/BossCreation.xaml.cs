@@ -77,7 +77,6 @@ namespace Buhalterka
                     File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/DnD/Bosses.json",
                         JsonConvert.SerializeObject(json));
                 }
-                //MessageBox.Show(BossList.SelectedIndex.ToString());
             }
             catch (Exception)
             {
