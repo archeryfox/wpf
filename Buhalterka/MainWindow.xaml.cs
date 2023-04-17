@@ -19,6 +19,7 @@ using System.Security.Cryptography;
 using MaterialDesignThemes.Wpf;
 using Newtonsoft.Json;
 using System.IO;
+using Buhalterka.Dog_AntiCafeDataSetTableAdapters;
 
 namespace Buhalterka
 {
@@ -32,7 +33,6 @@ namespace Buhalterka
         public static Boss currentBoss = new Boss();
         async public void BossUpdate()
         {
-
             var json = JsonConvert.DeserializeObject<List<Boss>>(File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/DnD/Bosses.json"));
             while (true)
             {
@@ -78,7 +78,6 @@ namespace Buhalterka
                 }
             } catch (Exception){}
             BossUpdate();
-            TurnList.ItemsSource = tns.Where(x => x.PatryDate.Value.Day == CurrntDate.SelectedDate.Value.Day).ToList();
         }
 
         void RestartActivity()
@@ -231,6 +230,10 @@ namespace Buhalterka
             TurnList.ItemsSource = Turn.turns.Where(x => x.PatryDate.Value.Day == CurrntDate.SelectedDate.Value.Day).ToList();
             TurnList.Items.Refresh();
             currentBoss = JsonConvert.DeserializeObject<List<Boss>>(File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/DnD/Bosses.json"))[0];
+        }
+        ~MainWindow()
+        {
+            Environment.Exit(0);
         }
     }
 }

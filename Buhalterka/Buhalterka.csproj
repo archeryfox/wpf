@@ -73,6 +73,14 @@
     </ApplicationDefinition>
     <Compile Include="Boss.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="Dog_AntiCafeDataSet.cs">
+      <DependentUpon>Dog_AntiCafeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dog_AntiCafeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dog_AntiCafeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SubIndex.cs" />
     <Compile Include="Turn.cs" />
     <Compile Include="Type.cs" />
@@ -136,6 +144,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Dog_AntiCafeDataSet.xsc">
+      <DependentUpon>Dog_AntiCafeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dog_AntiCafeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dog_AntiCafeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dog_AntiCafeDataSet.xss">
+      <DependentUpon>Dog_AntiCafeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
