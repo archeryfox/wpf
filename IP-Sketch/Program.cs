@@ -11,15 +11,21 @@ namespace IP_Sketch
 {
     internal class Program
     {
+        List<Socket> sockets = new List<Socket>();
+
+        private static Socket socket;
         static void Main(string[] args)
         {
-            while (true)
-            {
-            Send();
 
-            }
-            //Get();
+            IPEndPoint ip = new IPEndPoint(IPAddress.Any, 8888);
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            socket.Bind(ip);
+            socket.Listen(10);
+        }
 
+        private async Task Listening()
+        {
+            //var client = await 
         }
         async static Task Get()
         {

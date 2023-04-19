@@ -13,13 +13,15 @@ namespace IP_Client
     {
         static void Main(string[] args)
         {
-            const string ip = "26.188.38.104";
+            const string ip = "26.75.235.12";
             const int port = 8080;
 
             IPEndPoint IPep = new IPEndPoint(IPAddress.Parse(ip), port);
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Console.WriteLine("I:");
-            
+            while (true)
+            {
+                
             string mesg = Console.ReadLine();
 
             var Data = Encoding.UTF8.GetBytes(mesg);
@@ -39,7 +41,7 @@ namespace IP_Client
             Console.WriteLine(Anwser.ToString());
             socket.Shutdown(SocketShutdown.Both);
             socket.Close();
-            Console.ReadLine();
+            }
         }
     }
 }
