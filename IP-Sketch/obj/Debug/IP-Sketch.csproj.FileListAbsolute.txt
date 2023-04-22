@@ -1,0 +1,8 @@
+D:\WORK\Скетчи\IP-Sketch\bin\Debug\IP-Sketch.exe.config
+D:\WORK\Скетчи\IP-Sketch\bin\Debug\IP-Sketch.exe
+D:\WORK\Скетчи\IP-Sketch\bin\Debug\IP-Sketch.pdb
+D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.csproj.AssemblyReference.cache
+D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.csproj.SuggestedBindingRedirects.cache
+D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.csproj.CoreCompileInputs.cache
+D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.exe
+D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.pdb
