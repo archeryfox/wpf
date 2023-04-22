@@ -16,32 +16,13 @@ using System.Windows.Shapes;
 namespace Calendar
 {
     /// <summary>
-    /// Логика взаимодействия для UserControl1.xaml
+    /// Логика взаимодействия для Ticket.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class Ticket : Page
     {
-        public UserControl1()
+        public Ticket()
         {
             InitializeComponent();
-        }
-
-        private void Minimize(object sender, RoutedEventArgs e)
-        {
-            
-
-        }
-
-        private void Maximize(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Close(object sender, RoutedEventArgs e)
-        {
-            
-
-
-
         }
     }
 }

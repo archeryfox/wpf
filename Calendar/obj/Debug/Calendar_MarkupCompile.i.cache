@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\WORK\С# WPF\Calendar\App.xaml
-2928756758
+5-403463424
 
-7-160444510
+10-404084476
 171322091573
-MainWindow.xaml;UserControl1.xaml;
+DayItem.xaml;DayTicket.xaml;MainWindow.xaml;Ticket.xaml;ModernUIWindowsPanel.xaml;
 
 True
 

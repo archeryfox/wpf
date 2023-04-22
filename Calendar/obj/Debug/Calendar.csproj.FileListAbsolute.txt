@@ -26,3 +26,12 @@ D:\WORK\С# WPF\Calendar\obj\Debug\Calendar.csproj.CoreCompileInputs.cache
 D:\WORK\С# WPF\Calendar\obj\Debug\Calendar.csproj.CopyComplete
 D:\WORK\С# WPF\Calendar\obj\Debug\Calendar.exe
 D:\WORK\С# WPF\Calendar\obj\Debug\Calendar.pdb
+D:\WORK\С# WPF\Calendar\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\DayTicket.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\DayTicket.baml
+D:\WORK\С# WPF\Calendar\obj\Debug\Ticket.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\Ticket.baml
+D:\WORK\С# WPF\Calendar\obj\Debug\DayItem.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\DayItem.baml
+D:\WORK\С# WPF\Calendar\obj\Debug\ModernUIWindowsPanel.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\ModernUIWindowsPanel.baml
