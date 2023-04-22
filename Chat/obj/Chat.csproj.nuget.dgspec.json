@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\Chat.csproj": {}
+    "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\Chat.csproj": {
+    "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\Chat.csproj",
+        "projectUniqueName": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat.csproj",
         "projectName": "Chat",
-        "projectPath": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\Chat.csproj",
+        "projectPath": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat.csproj",
         "packagesPath": "C:\\Users\\USER.DESKTOP-GPQNH18\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\obj\\",
+        "outputPath": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

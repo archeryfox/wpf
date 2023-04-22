@@ -19,3 +19,24 @@ D:\WORK\С# WPF\Chat\Chat\obj\Debug\net7.0-windows\refint\Chat.dll
 D:\WORK\С# WPF\Chat\Chat\obj\Debug\net7.0-windows\Chat.pdb
 D:\WORK\С# WPF\Chat\Chat\obj\Debug\net7.0-windows\Chat.genruntimeconfig.cache
 D:\WORK\С# WPF\Chat\Chat\obj\Debug\net7.0-windows\ref\Chat.dll
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\bin\Debug\net7.0-windows\Chat.exe
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\bin\Debug\net7.0-windows\Chat.deps.json
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\bin\Debug\net7.0-windows\Chat.runtimeconfig.json
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\bin\Debug\net7.0-windows\Chat.dll
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\bin\Debug\net7.0-windows\Chat.pdb
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.csproj.AssemblyReference.cache
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\App.g.cs
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat_MarkupCompile.cache
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat_MarkupCompile.lref
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\MainWindow.baml
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.g.resources
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.AssemblyInfoInputs.cache
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.AssemblyInfo.cs
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.csproj.CoreCompileInputs.cache
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.dll
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\refint\Chat.dll
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.pdb
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\Chat.genruntimeconfig.cache
+C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\ref\Chat.dll

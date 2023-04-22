@@ -31,7 +31,7 @@ namespace Chat
 
             IPEndPoint ip = new IPEndPoint(IPAddress.Any, 8888);
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Connect("26.75.235.12",8888);
+            socket.Connect("26.188.38.104", 8888);
             ReciveMesg();
         }
 
@@ -39,9 +39,9 @@ namespace Chat
         {
             while (true)
             {
-                byte[] bts = new byte[1024];
-                await socket.ReceiveAsync(bts, SocketFlags.None);
-                string mesg  = Encoding.UTF8.GetString(bts);
+                List<byte> bts = new List<byte>();
+                await socket.ReceiveAsync(bts.ToArray(), SocketFlags.None);
+                string mesg  = Encoding.UTF8.GetString(bts.ToArray());
                 ListBox1.Items.Add(mesg);
 
             }
