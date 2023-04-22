@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IP-Sketch", "IP-Sketch.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IP-Client", "..\IP-Client\IP-Client.csproj", "{AC641CBF-D446-4D22-8311-86569B96144C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imgs", "..\Imgs\Imgs.csproj", "{C9C42C40-869F-4822-B824-001BFEAB5D5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AC641CBF-D446-4D22-8311-86569B96144C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC641CBF-D446-4D22-8311-86569B96144C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC641CBF-D446-4D22-8311-86569B96144C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9C42C40-869F-4822-B824-001BFEAB5D5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9C42C40-869F-4822-B824-001BFEAB5D5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9C42C40-869F-4822-B824-001BFEAB5D5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9C42C40-869F-4822-B824-001BFEAB5D5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

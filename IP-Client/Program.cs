@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -11,37 +12,48 @@ namespace IP_Client
 {
     internal class Program
     {
+        static async void Geting()
+        {
+            await Task.Delay(100);
+        }   
         static void Main(string[] args)
         {
-            const string ip = "26.75.235.12";
+            Console.Title = "Клиент";
+
+            #region TCP Test
+            const string ip = "26.188.38.104";
+            //комп
             const int port = 8080;
 
-            IPEndPoint IPep = new IPEndPoint(IPAddress.Parse(ip), port);
-            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            Console.WriteLine("I:");
             while (true)
             {
-                
-            string mesg = Console.ReadLine();
+                try
+                {
+                    IPEndPoint IPep = new IPEndPoint(IPAddress.Parse(ip), port);
+                    Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-            var Data = Encoding.UTF8.GetBytes(mesg);
-            socket.Connect(IPep);
-            socket.Send(Data);
+                    socket.ConnectAsync(IPep);
+                    Console.Write("I:");
+                    string mesg = Console.ReadLine();
+                    var Data = Encoding.UTF8.GetBytes(mesg);
+                    socket.Send(Data);
 
-            var Buffer = new byte[1024];
-            int ReciveDataSize = 0;
-            var Anwser = new StringBuilder();
+                    var Buffer = new byte[1024];
+                    int ReciveDataSize = 0;
+                    var Anwser = new StringBuilder();
 
-            do
-            {
-                ReciveDataSize = socket.Receive(Buffer);
-                Anwser.Append(Encoding.UTF8.GetString(Buffer, 0, ReciveDataSize));
-            } while (socket.Available > 0);
+                    do
+                    {
+                        ReciveDataSize = socket.Receive(Buffer);
+                        Anwser.Append(Encoding.UTF8.GetString(Buffer, 0, ReciveDataSize));
+                    } while (socket.Available > 0);
 
-            Console.WriteLine(Anwser.ToString());
-            socket.Shutdown(SocketShutdown.Both);
-            socket.Close();
+                    Console.WriteLine(Anwser.ToString());
+                    socket.Shutdown(SocketShutdown.Both);
+                    socket.Close();
+                } finally { }
             }
+            #endregion
         }
     }
 }

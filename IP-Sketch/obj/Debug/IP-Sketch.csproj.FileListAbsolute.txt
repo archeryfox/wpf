@@ -6,11 +6,3 @@ D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.csproj.SuggestedBindingRedire
 D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.csproj.CoreCompileInputs.cache
 D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.exe
 D:\WORK\Скетчи\IP-Sketch\obj\Debug\IP-Sketch.pdb
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\bin\Debug\IP-Sketch.exe.config
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\bin\Debug\IP-Sketch.exe
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\bin\Debug\IP-Sketch.pdb
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\obj\Debug\IP-Sketch.csproj.AssemblyReference.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\obj\Debug\IP-Sketch.csproj.SuggestedBindingRedirects.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\obj\Debug\IP-Sketch.csproj.CoreCompileInputs.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\obj\Debug\IP-Sketch.exe
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Sketch\obj\Debug\IP-Sketch.pdb

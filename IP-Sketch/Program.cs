@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,85 +12,36 @@ namespace IP_Sketch
 {
     internal class Program
     {
-        List<Socket> sockets = new List<Socket>();
-
-        private static Socket socket;
         static void Main(string[] args)
         {
-
-            IPEndPoint ip = new IPEndPoint(IPAddress.Any, 8888);
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            socket.Bind(ip);
-            socket.Listen(10);
-        }
-
-        private async Task Listening()
-        {
-            //var client = await 
-        }
-        async static Task Get()
-        {
-            const string ip = "26.246.116.166";
+            const string ip = "192.168.56.1";
+            //Ноут
+            Console.Title = "Сервак";
             const int port = 8080;
             IPEndPoint IPep = new IPEndPoint(IPAddress.Parse(ip), port);
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Bind(IPep);
             socket.Listen(1000);
+
             while (true)
             {
+                Console.WriteLine("cdc");
                 Socket Listener = socket.Accept();
                 var Buffer = new byte[1024];
                 int ReciveDataSize = 0;
-                var getData = new StringBuilder();
-
+                var Data = new StringBuilder();
 
                 do
                 {
                     ReciveDataSize = Listener.Receive(Buffer);
-                    getData.Append(Encoding.UTF8.GetString(Buffer, 0, ReciveDataSize));
+                    Data.Append(Encoding.UTF8.GetString(Buffer, 0, ReciveDataSize));
                 } while (Listener.Available > 0);
 
-                Console.WriteLine(getData);
-                Listener.Send(Encoding.UTF8.GetBytes("Успех"));
-                if (getData.Equals("/0"))
-                {
-                    Listener.Shutdown(SocketShutdown.Both);
-                    Listener.Close();
-                }
-                await Task.Delay(100);
-            }
-        }
-        async static Task Send()
-        {
-            while (true)
-            {
-                const string ip = "26.188.38.104";
-                const int port = 8080;
+                Console.WriteLine(Data);
+                Listener.Send(Encoding.UTF8.GetBytes("Успех1"));
 
-                IPEndPoint IPep = new IPEndPoint(IPAddress.Parse(ip), port);
-                Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                Console.Write("A:");
-
-                string mesg = Console.ReadLine();
-
-                var Data = Encoding.UTF8.GetBytes(mesg);
-                socket.Connect(IPep);
-                socket.Send(Data);
-
-                var Buffer = new byte[1024];
-                int ReciveDataSize = 0;
-                var Anwser = new StringBuilder();
-
-                do
-                {
-                    ReciveDataSize = socket.Receive(Buffer);
-                    Anwser.Append(Encoding.UTF8.GetString(Buffer, 0, ReciveDataSize));
-                } while (socket.Available > 0);
-
-                Console.WriteLine(Anwser.ToString());
-                socket.Shutdown(SocketShutdown.Both);
-                socket.Close();
-                await Task.Delay(10);
+                //Listener.Shutdown(SocketShutdown.Both);
+                //Listener.Close();
             }
         }
     }

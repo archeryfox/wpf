@@ -6,19 +6,3 @@ D:\WORK\Скетчи\IP-Client\obj\Debug\IP-Client.csproj.SuggestedBindingRedire
 D:\WORK\Скетчи\IP-Client\obj\Debug\IP-Client.csproj.CoreCompileInputs.cache
 D:\WORK\Скетчи\IP-Client\obj\Debug\IP-Client.exe
 D:\WORK\Скетчи\IP-Client\obj\Debug\IP-Client.pdb
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\bin\Debug\IP-Client.exe.config
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\bin\Debug\IP-Client.exe
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\bin\Debug\IP-Client.pdb
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\obj\Debug\IP-Client.csproj.AssemblyReference.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\obj\Debug\IP-Client.csproj.SuggestedBindingRedirects.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\obj\Debug\IP-Client.csproj.CoreCompileInputs.cache
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\obj\Debug\IP-Client.exe
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\IP-Client\obj\Debug\IP-Client.pdb
-D:\WORK\С# WPF\IP-Client\bin\Debug\IP-Client.exe.config
-D:\WORK\С# WPF\IP-Client\bin\Debug\IP-Client.exe
-D:\WORK\С# WPF\IP-Client\bin\Debug\IP-Client.pdb
-D:\WORK\С# WPF\IP-Client\obj\Debug\IP-Client.csproj.AssemblyReference.cache
-D:\WORK\С# WPF\IP-Client\obj\Debug\IP-Client.csproj.SuggestedBindingRedirects.cache
-D:\WORK\С# WPF\IP-Client\obj\Debug\IP-Client.csproj.CoreCompileInputs.cache
-D:\WORK\С# WPF\IP-Client\obj\Debug\IP-Client.exe
-D:\WORK\С# WPF\IP-Client\obj\Debug\IP-Client.pdb
