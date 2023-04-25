@@ -37,12 +37,13 @@ namespace Calendar
             TicketData.Text = FDt.ToLongDateString();
             string dson = File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Deals.json");
             dayList = new DayList(FDt, JsonConvert.DeserializeObject<List<DItem>>(dson));
+            MainWindow.MainDayList = Jsoner<DayList>.Deserialize(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ДниИдут.json");
             ListViewDeals.Items.Clear();
-            foreach (DayList itDayList in MainWindow.MainDayList)
-            {
-                if (itDayList.DayData == FDt)
+            var buffreDay = MainWindow.MainDayList.Find(x => x.DayData == FDt);
+            
+                if (MainWindow.MainDayList.Find(x => x.DayData == FDt) != null)
                 {
-                    foreach (var item in itDayList.Items)
+                    foreach (var item in buffreDay.Items)
                     {
                         DayItem dayItem = new DayItem(item);
                         dayItem.Height = 70;
@@ -50,9 +51,8 @@ namespace Calendar
                         dayItem.mTextBlock.HorizontalAlignment = HorizontalAlignment.Right;
                         ListViewDeals.Items.Add(dayItem);
                     }
-                    break;
                 }
-                if (itDayList.DayData != FDt)
+                if (MainWindow.MainDayList.Find(x => x.DayData == FDt) == null)
                 {
                     foreach (var item in dayList.Items)
                     {
@@ -63,9 +63,7 @@ namespace Calendar
                         dayItem.mTextBlock.HorizontalAlignment = HorizontalAlignment.Right;
                         ListViewDeals.Items.Add(dayItem);
                     }
-                    break;
                 }
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -76,6 +74,20 @@ namespace Calendar
             for (int i = 0; i < DateTime.DaysInMonth(page.DatePick.DisplayDate.Year, page.DatePick.DisplayDate.Month); i++)
             {
                 DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\WORK\С# WPF\Calendar\Pics\dog.png")));
+                try
+                {
+                    DayList ico = Jsoner<DayList>
+                        .Deserialize(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/ДниИдут.json")
+                        .Where(x => x.DayData.Day == i + 1).ToList()[0];
+                    if (ico != null)
+                    {
+                        dt.TopTicket.Source = new BitmapImage(new Uri(ico.Items.FindAll(l => l.IsChecked)[0].PathIco));
+                    }
+                }
+                catch
+                {
+                }
+
                 if (i + 1 == DateTime.Now.Day && page.DatePick.DisplayDate.Month == DateTime.Now.Month)
                 {
                     Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
@@ -103,12 +115,18 @@ namespace Calendar
             }
 
             var WithMyData = tester.Where(x => x.DayData == FDt).ToList();
-            foreach (DayList date in tester)
+            foreach (DayList day in tester)
             {
                 if (WithMyData.Count != 0) // если этот день уже записывался и есть в файле, то изменить его
                 {
-                    date.Items.Clear();
-                    date.Items = dayList.Items;
+                    day.Items.Clear();
+                    day.Items = dayList.Items;
+                    day.DayData = FDt;
+                    int indx = tester.IndexOf(tester.Find(x => x.DayData == FDt));
+                    tester.RemoveAt(indx);
+                    tester.Insert(indx,day);
+                    MainWindow.MainDayList.Clear();
+                    MainWindow.MainDayList = tester;
                     break;
                 }
 

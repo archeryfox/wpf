@@ -28,7 +28,7 @@ namespace Calendar
             DatePick.Text = DateTime.Now.ToString();
             Update();
         }
-        
+
         public static string textData;
 
 
@@ -39,6 +39,15 @@ namespace Calendar
             for (int i = 0; i < DateTime.DaysInMonth(DatePick.DisplayDate.Year, DatePick.DisplayDate.Month); i++)
             {
                 DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\WORK\С# WPF\Calendar\Pics\dog.png")));
+                try
+                {
+                    DayList ico = Jsoner<DayList>.Deserialize(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"/ДниИдут.json").Where(x => x.DayData.Day == i + 1).ToList()[0];
+                    if (ico != null)
+                    {
+                        dt.TopTicket.Source = new BitmapImage(new Uri(ico.Items.FindAll(l => l.IsChecked)[0].PathIco));
+                    }
+                }
+                catch { }
                 if (i + 1 == DateTime.Now.Day && DatePick.DisplayDate.Month == DateTime.Now.Month)
                 {
                     Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
