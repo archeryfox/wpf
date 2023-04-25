@@ -132,7 +132,7 @@ namespace Calendar
 
                 if (WithMyData.Count == 0)
                 { // если этот день НЕ записывался, то добавить
-                    MessageBox.Show("!");
+                    //MessageBox.Show("!");
                     MainWindow.MainDayList.Add(dayList);
                     break;
                 }
