@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace Calendar
 {
@@ -21,25 +23,14 @@ namespace Calendar
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static List<DayList> MainDayList = new List<DayList>();
+
         public MainWindow()
         {
             InitializeComponent();
-            CardT.Content = Title;
-            DatePick.DisplayDate = DateTime.Now;
-            DateNow.Content = CultureInfo.GetCultureInfoByIetfLanguageTag("ru-RU").DateTimeFormat.GetMonthName(DatePick.DisplayDate.Month) + " " + DateTime.Now.Year;
-            List<DayTicket> dayTickets = new List<DayTicket>();
-            for (int i = 0; i < DateTime.DaysInMonth(erDateTime.Year, erDateTime.Month); i++)
-            {
-                DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\\WORK\\С# WPF\\Calendar\\calendar-icon_34471.ico")));
-                if (i + 1 == DateTime.Now.Day && DatePick.DisplayDate.Month == DateTime.Now.Month)
-                {
-                    Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
-                    dt.Background = b;
-                    dt.Background.Opacity = 0.2;
-                }
-                dayTickets.Add(dt);
-                WrapPanelDays.Children.Add(dayTickets[i]);
-            }
+            var cp = new CalendarPage();
+            MainDayList = Jsoner<DayList>.Deserialize(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)+"\\ДниИдут.json");
+            Framer.Content = cp;
         }
 
         private DateTime erDateTime = DateTime.Now;
@@ -49,64 +40,24 @@ namespace Calendar
                 (sender as MainWindow).DragMove();
 
         }
+    }
 
-        private void DatePick_OnSelectedDateChanged(object sender, SelectionChangedEventArgs e)
+    public class Jsoner<T>
+    {
+        static public void Serialize(List<T> list, string fileName, string SubWay = "")
         {
-            DateNow.Content = CultureInfo.GetCultureInfoByIetfLanguageTag("ru-RU").DateTimeFormat.GetMonthName(DatePick.DisplayDate.Month) + " " + DatePick.DisplayDate.Year;
-            List<DayTicket> dayTickets = new List<DayTicket>();
-            WrapPanelDays.Children.Clear();
-            for (int i = 0; i < DateTime.DaysInMonth(DatePick.DisplayDate.Year, DatePick.DisplayDate.Month); i++)
-            {
-                DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\\WORK\\С# WPF\\Calendar\\calendar-icon_34471.ico")));
-                if (i + 1 == DateTime.Now.Day && DatePick.DisplayDate.Month == DateTime.Now.Month)
-                {
-                    Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
-                    dt.Background = b;
-                    dt.Background.Opacity = 0.2;
-                }
-                dayTickets.Add(dt);
-                WrapPanelDays.Children.Add(dayTickets[i]);
-            }
+            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + SubWay + $"/{fileName}.json", JsonConvert.SerializeObject(list));
         }
-
-        private void ToPrev_Click(object sender, RoutedEventArgs e)
+        static public List<T> Deserialize(string path)
         {
-            DatePick.Text = DatePick.DisplayDate.AddMonths(-1).ToString();
-            DateNow.Content = CultureInfo.GetCultureInfoByIetfLanguageTag("ru-RU").DateTimeFormat.GetMonthName(DatePick.DisplayDate.Month) + " " + DatePick.DisplayDate.Year;
-            List<DayTicket> dayTickets = new List<DayTicket>();
-            WrapPanelDays.Children.Clear();
-            for (int i = 0; i < DateTime.DaysInMonth(DatePick.DisplayDate.Year, DatePick.DisplayDate.Month); i++)
+            try
             {
-                DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\\WORK\\С# WPF\\Calendar\\calendar-icon_34471.ico")));
-                if (i + 1 == DateTime.Now.Day && DatePick.DisplayDate.Month == DateTime.Now.Month)
-                {
-                    Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
-                    dt.Background = b;
-                    dt.Background.Opacity = 0.2;
-                }
-                dayTickets.Add(dt);
-                WrapPanelDays.Children.Add(dayTickets[i]);
+                return JsonConvert.DeserializeObject<List<T>>(File.ReadAllText(path));
             }
-        }
-
-        private void ToNext_Click(object sender, RoutedEventArgs e)
-        {
-            DatePick.Text = DatePick.DisplayDate.AddMonths(1).ToString();
-            DateNow.Content = CultureInfo.GetCultureInfoByIetfLanguageTag("ru-RU").DateTimeFormat.GetMonthName(DatePick.DisplayDate.Month) + " " + DatePick.DisplayDate.Year;
-            List<DayTicket> dayTickets = new List<DayTicket>();
-            WrapPanelDays.Children.Clear();
-            //MessageBox.Show(DatePick.Text);
-            for (int i = 0; i < DateTime.DaysInMonth(DatePick.DisplayDate.Year, DatePick.DisplayDate.Month); i++)
+            catch
             {
-                DayTicket dt = new DayTicket(i + 1, new BitmapImage(new Uri(@"D:\\WORK\\С# WPF\\Calendar\\calendar-icon_34471.ico")));
-                if (i + 1 == DateTime.Now.Day && DatePick.DisplayDate.Month == DateTime.Now.Month)
-                {
-                    Brush b = new SolidColorBrush(Color.FromRgb(240, 240, 230));
-                    dt.Background = b;
-                    dt.Background.Opacity = 0.2;
-                }
-                dayTickets.Add(dt);
-                WrapPanelDays.Children.Add(dayTickets[i]);
+                MessageBox.Show("Ошибочка в пути или файле");
+                return null;
             }
         }
     }

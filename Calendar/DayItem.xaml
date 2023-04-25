@@ -5,15 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Calendar"
              mc:Ignorable="d" 
+             MouseLeftButtonDown="DayItem_OnMouseLeftButtonDown"
              d:DesignHeight="80" d:DesignWidth="300">
-    <Grid>
+    <Grid >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="19*"/>
         </Grid.ColumnDefinitions>
-        <CheckBox HorizontalContentAlignment="Center" HorizontalAlignment="Center"/>
-           <Image x:Name="Ico" Grid.Column="1" Source="calendar-icon_34471(1).ico" Height="NaN" HorizontalAlignment="Left"/>
-           <TextBlock HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="2" Text="Побриться долго" FontSize="20" Foreground="AliceBlue" />
+        <CheckBox x:Name="ThatCheckBox" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="18"/>
+        <Image x:Name="Ico" Margin="5" Grid.Column="1" Source="Pics/fast-food.png" HorizontalAlignment="Center"/>
+        <Label x:Name="mTextBlock" HorizontalAlignment="Right" 
+                VerticalAlignment="Center" Grid.Column="2"
+                HorizontalContentAlignment="Center"
+               Content="Побриться долго" FontSize="20" Foreground="AliceBlue" Width="220"/>
     </Grid>
 </UserControl>

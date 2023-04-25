@@ -13,13 +13,13 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Padding="0" Click="Minimize" Background="Transparent" BorderThickness="0"  Foreground="White" BorderBrush="#FF53A5CB">
+        <Button Padding="0" Focusable="False" Click="Minimize" Background="Transparent" BorderThickness="0"  Foreground="White" BorderBrush="#FF53A5CB">
             <materialDesign:PackIcon Kind="Minus"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="22" Height="18"  />
         </Button>
-        <Button Padding="0" Background="Transparent" BorderThickness="0" Foreground="White" Grid.Column="1" BorderBrush="#FF53A5CB" Click="Maximize">
+        <Button Padding="0" Focusable="False" Background="Transparent" BorderThickness="0" Foreground="White" Grid.Column="1" BorderBrush="#FF53A5CB" Click="Maximize">
             <materialDesign:PackIcon Kind="SquareOutline" VerticalAlignment="Center" Width="17" Height="14" />
         </Button>
-        <Button Background="Transparent" Padding="0" BorderThickness="0" Foreground="White" Click="Close" Grid.Column="2" BorderBrush="#FF53A5CB">
+        <Button Background="Transparent" Focusable="False" Padding="0" BorderThickness="0" Foreground="White" Click="Close" Grid.Column="2" BorderBrush="#FF53A5CB">
             <materialDesign:PackIcon Kind="CloseBold" VerticalAlignment="Center" Width="21" HorizontalAlignment="Center" Height="14"/>
         </Button>
     </Grid>

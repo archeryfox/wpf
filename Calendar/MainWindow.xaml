@@ -53,23 +53,9 @@
                     <ColumnDefinition Width="9*"/>
                     <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
-
                 <local:ModernUIWindowsPanel Grid.Column="2" Padding="2"/>
-                
-                <materialDesign:Card x:Name="CardT" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Foreground="#FFFA78BE" FontFamily="Magneto" FontSize="16"></materialDesign:Card>
-                <materialDesign:Card x:Name="DateNow" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" Foreground="White" FontFamily="Magneto" FontSize="16"></materialDesign:Card>
-                <DatePicker SelectedDateChanged="DatePick_OnSelectedDateChanged" FontSize="16" x:Name="DatePick"  Grid.Column="1" HorizontalAlignment="Right" Grid.Row="1" Padding="10" Foreground="GhostWhite" HorizontalContentAlignment="Center" Width="36" Focusable="False"></DatePicker>
-                <Button x:Name="ToPrev" Click="ToPrev_Click" Grid.Row="1" Margin="5" Padding="5" Height="NaN" VerticalAlignment="Stretch" Background="#CC721346" BorderBrush="#E57C164D" Focusable="False">
-                    <materialDesign:PackIcon Kind="ArrowLeftThick" Width="NaN" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="NaN"/>
-                </Button>
-                <Button x:Name="ToNext" Grid.Row="1" Click="ToNext_Click" Grid.Column="2" Margin="5" Padding="5" Height="NaN" VerticalAlignment="Stretch" Background="#CC721346" BorderBrush="#E57C164D" Cursor="Hand" Focusable="False">
-                    <materialDesign:PackIcon Kind="ArrowRightThick" Width="NaN" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="NaN"/>
-                    </Button>
-                <Frame x:Name="Framer"  Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-                <Border x:Name="MyBorder" Padding="10" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3">
-                    <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Stretch" x:Name="WrapPanelDays"/>
-                </Border>
-
+                <Frame NavigationUIVisibility="Hidden" x:Name="Framer"  Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                       Grid.Column="0" />
             </Grid>
         </Border>
     </Border>

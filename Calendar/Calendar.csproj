@@ -69,18 +69,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DayItem.xaml.cs">
       <DependentUpon>DayItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DayList.cs" />
     <Compile Include="DayTicket.xaml.cs">
       <DependentUpon>DayTicket.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DItem.cs" />
     <Compile Include="Ticket.xaml.cs">
       <DependentUpon>Ticket.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModernUIWindowsPanel.xaml.cs">
       <DependentUpon>ModernUIWindowsPanel.xaml</DependentUpon>
     </Compile>
+    <Page Include="CalendarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DayItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -143,8 +152,8 @@
   <ItemGroup>
     <Resource Include="calendar-icon_34471%281%29.ico" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Resource Include="Pics\dog.png" />
     <Resource Include="Pics\fast-food.png" />
     <Resource Include="Pics\laziness.png" />
     <Resource Include="Pics\shirt.png" />

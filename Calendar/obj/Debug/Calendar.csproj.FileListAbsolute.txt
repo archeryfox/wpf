@@ -35,3 +35,5 @@ D:\WORK\С# WPF\Calendar\obj\Debug\DayItem.g.cs
 D:\WORK\С# WPF\Calendar\obj\Debug\DayItem.baml
 D:\WORK\С# WPF\Calendar\obj\Debug\ModernUIWindowsPanel.g.cs
 D:\WORK\С# WPF\Calendar\obj\Debug\ModernUIWindowsPanel.baml
+D:\WORK\С# WPF\Calendar\obj\Debug\CalendarPage.g.cs
+D:\WORK\С# WPF\Calendar\obj\Debug\CalendarPage.baml

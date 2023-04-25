@@ -35,8 +35,8 @@ namespace Calendar
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            (Application.Current.MainWindow as MainWindow).MyBorder.Child = null;
-            (Application.Current.MainWindow as MainWindow).Framer.Content= new Ticket();
+            (Application.Current.MainWindow as MainWindow).Framer.Content= new Ticket(DayNumber.Content.ToString());
+            ((Application.Current.MainWindow as MainWindow).Framer.Content as CalendarPage).MyBorder.Child = null;
         }
     }
 }

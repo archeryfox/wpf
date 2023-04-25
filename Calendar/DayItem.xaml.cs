@@ -22,7 +22,20 @@ namespace Calendar
     {
         public DayItem()
         {
+        }
+
+        public DayItem(DItem dtDItem)
+        {
             InitializeComponent();
+            mTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            ThatCheckBox.IsChecked = dtDItem.IsChecked;
+            Ico.Source = new BitmapImage(new Uri(dtDItem.PathIco));
+            mTextBlock.Content = dtDItem.Name;
+            _contentLoaded = true;
+        }
+        private void DayItem_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ThatCheckBox.IsChecked = !ThatCheckBox.IsChecked;
         }
     }
 }
