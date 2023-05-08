@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XO.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAIAAAAAAAEAABAAAAAAAAAAAAAAQAQ=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.325" />
+  </Class>
+  <Class Name="XO.Robot">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAQ=</HashCode>
+      <FileName>Robot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XO.Player">
+    <Position X="11.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
