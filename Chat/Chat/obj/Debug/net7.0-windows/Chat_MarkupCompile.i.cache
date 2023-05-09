@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\obj\Debug\net7.0-windows\
+D:\WORK\С# WPF\Chat\Chat\obj\Debug\net7.0-windows\
 Chat
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\USER.DESKTOP-GPQNH18\Desktop\wpf\Chat\Chat\App.xaml
-11407045341
+D:\WORK\С# WPF\Chat\Chat\App.xaml
+51253474285
 
-5-1847151079
-198-1175457984
-MainWindow.xaml;
+121582646221
+201-1624901549
+AdminPage.xaml;ClientPage.xaml;MainWindow.xaml;StartPage.xaml;UserMessage.xaml;
 
-False
+True
 

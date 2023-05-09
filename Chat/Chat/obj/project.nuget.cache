@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "W2exxaspAvzlgRTleKPJIO5okUxfIzAIHM1K4drJfTkVBhi8hSqtXKMHHO4z+oa9pn3yeLnyXP1tTaXLVGKJww==",
+  "dgSpecHash": "5ok1DN+vYf64i1qCK/FkWr/BOyT6YaqCYw3dLnZuqTmr2i69zr+/qQH34PwDKvJFgpMZx3g+O6v2eiwJzkw8zQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER.DESKTOP-GPQNH18\\Desktop\\wpf\\Chat\\Chat\\Chat.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\WORK\\С# WPF\\Chat\\Chat\\Chat.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arche\\.nuget\\packages\\materialdesigncolors\\2.1.2\\materialdesigncolors.2.1.2.nupkg.sha512",
+    "C:\\Users\\arche\\.nuget\\packages\\materialdesignthemes\\4.8.0\\materialdesignthemes.4.8.0.nupkg.sha512",
+    "C:\\Users\\arche\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
   "logs": []
 }
